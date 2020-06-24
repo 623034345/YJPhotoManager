@@ -17,6 +17,7 @@
 		48766D4224A20F3E00FD5764 /* YJPhotoManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48766D4124A20F3E00FD5764 /* YJPhotoManagerTests.m */; };
 		48766D4D24A20F3E00FD5764 /* YJPhotoManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48766D4C24A20F3E00FD5764 /* YJPhotoManagerUITests.m */; };
 		48766D5D24A2106900FD5764 /* YJPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48766D5B24A2106900FD5764 /* YJPhotoManager.m */; };
+		48766D6024A3050D00FD5764 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48766D5F24A3050D00FD5764 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		48766D4E24A20F3E00FD5764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48766D5B24A2106900FD5764 /* YJPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPhotoManager.m; sourceTree = "<group>"; };
 		48766D5C24A2106900FD5764 /* YJPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPhotoManager.h; sourceTree = "<group>"; };
+		48766D5F24A3050D00FD5764 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48766D6024A3050D00FD5764 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +94,7 @@
 				48766D4024A20F3E00FD5764 /* YJPhotoManagerTests */,
 				48766D4B24A20F3E00FD5764 /* YJPhotoManagerUITests */,
 				48766D2324A20F3B00FD5764 /* Products */,
+				48766D5E24A3050D00FD5764 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +152,14 @@
 				48766D5B24A2106900FD5764 /* YJPhotoManager.m */,
 			);
 			path = YJPhotoManager;
+			sourceTree = "<group>";
+		};
+		48766D5E24A3050D00FD5764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48766D5F24A3050D00FD5764 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ2QUUL6J3;
 				INFOPLIST_FILE = YJPhotoManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ2QUUL6J3;
 				INFOPLIST_FILE = YJPhotoManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
