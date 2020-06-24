@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>需要访问您的相机，以便用户拍照上传照片用于更换头像等功能</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要访问您的相册，以便用户发送本地图片更换头像等功能</string>
 </dict>
 </plist>
