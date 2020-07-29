@@ -3,6 +3,5 @@
 			
 	#import "YJPhotoManager.h"
 	
-	[[YJPhotoManager shareInstance] showAlertWithController:self isClip:YES completion:^(UIImage * _Nonnull image) {
-  
+	[[YJPhotoManager shareInstance] showAlertWithController:self isClip:NO style:YJPhotoStyleDefualt completion:^(UIImage * _Nonnull image) {
 	}];

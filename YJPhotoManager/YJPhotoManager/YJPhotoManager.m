@@ -31,30 +31,44 @@ static YJPhotoManager *instance = nil;
 /// 弹出相册 相机 选择框
 /// @param vc 当前界面的UIViewController
 /// @param isClip 是否剪切
+/// @param style 可选择相册相机 单选或多选
 /// @param completion 选择的图片回调
-- (void)showAlertWithController:(UIViewController *)vc isClip:(BOOL)isClip completion:(void (^) (UIImage *image))completion
+- (void)showAlertWithController:(UIViewController *)vc isClip:(BOOL)isClip style:(YJPhotoStyle)style completion:(void (^) (UIImage *image))completion
 {
 	self.isClip = isClip;
 	self.imageBlcok = completion;
 	_viewController = vc;
-	__weak typeof(self) weakSelf = self;
-	UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提醒" message:@"请选择" preferredStyle:UIAlertControllerStyleActionSheet];
-
-	UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-		[weakSelf openLibray];
-	}];
-	UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-		[weakSelf openCamera];
-	}];
-	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-		weakSelf.imageBlcok = nil;
-	}];
+	switch (style) {
+		case YJPhotoStyleDefualt:
+	  {
+		MJWeakSelf
+		UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+			[weakSelf openLibray];
+		}];
+		UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+			[weakSelf openCamera];
+		}];
+		UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+			weakSelf.imageBlcok = nil;
+		}];
+		
+		[self _alertActionShowWithActionArr:@[cameraAction,photoLibraryAction,cancelAction] style:UIAlertControllerStyleActionSheet title:@"提醒" message:@"请选择" viewController:vc];
+	  }
+			break;
+		case YJPhotoStyleCamera:
+	  {
+		[self openCamera];
+	  }
+			break;
+		case YJPhotoStyleLibray:
+	  {
+		[self openLibray];
+	  }
+			
+		default:
+			break;
+	}
 	
-	[alertVC addAction:cameraAction];
-	[alertVC addAction:photoLibraryAction];
-	[alertVC addAction:cancelAction];
-   
-	[_viewController presentViewController:alertVC animated:YES completion:nil];
 }
 //打开相册
 - (void)openLibray

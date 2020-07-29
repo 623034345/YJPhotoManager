@@ -22,7 +22,7 @@
 - (IBAction)choosePhoto:(id)sender {
 	__weak typeof(self) weakSelf = self;
 
-	[[YJPhotoManager shareInstance] showAlertWithController:self isClip:NO completion:^(UIImage * _Nonnull image) {
+	[[YJPhotoManager shareInstance] showAlertWithController:self isClip:NO style:YJPhotoStyleDefualt completion:^(UIImage * _Nonnull image) {
 		weakSelf.mainImageView.image = image;
 	}];
 }
